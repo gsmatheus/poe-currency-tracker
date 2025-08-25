@@ -1,0 +1,2 @@
+*/15 * * * * root /var/www/html/bin/fetch-currency.sh >> /var/www/html/fetch-currency.log 2>&1
+# !

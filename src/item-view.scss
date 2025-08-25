@@ -1,0 +1,42 @@
+.item-page {
+  h1 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    img {
+      width: 64px; // control size
+    }
+  }
+ 
+  .charts-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    
+    .chart-wrapper {
+      width: 50%;
+      height: 400px;
+    }
+
+    .chart {
+      width: 50%;
+      height: 50%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .item-info {
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    clear: both;
+  }
+
+  .item-info p {
+    margin: 4px 0;
+    font-weight: normal;
+    color: #b1955e;
+  }
+  
+}

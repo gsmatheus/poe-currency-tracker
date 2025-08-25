@@ -1,0 +1,234 @@
+.item-page h1 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.item-page h1 img {
+  width: 64px;
+}
+.item-page .charts-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.item-page .charts-container .chart-wrapper {
+  width: 50%;
+  height: 400px;
+}
+.item-page .charts-container .chart {
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.item-page .item-info {
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  clear: both;
+}
+.item-page .item-info p {
+  margin: 4px 0;
+  font-weight: normal;
+  color: #b1955e;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.about-container .text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.about-container .image-about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+}
+.about-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "FontinSmallCaps";
+  src: url("../fonts/Fontin-SmallCaps.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.currency-td {
+  transition: background 0.2s, transform 0.2s;
+}
+
+.currency-td:hover {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.currency-cell,
+.value-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.text-table {
+  line-height: 1;
+}
+
+body {
+  font-family: "FontinSmallCaps", Verdana, Arial, Helvetica, sans-serif;
+  background: #000000;
+  padding: 20px;
+  color: #ffffff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/img/Bg2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body h1 {
+  text-align: center;
+  color: #ffffff;
+}
+body table {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: rgb(15, 11, 11);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+body table th, body table td {
+  padding: 12px 15px;
+  border: 1px solid #110909;
+  text-align: left;
+  color: #ffffff;
+  font-weight: normal;
+}
+body table .numeric {
+  text-align: center;
+}
+body table th {
+  background: #333;
+  color: #ffffff;
+}
+
+.sorted {
+  cursor: pointer;
+}
+
+.sort-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/img/poebrackground.png");
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+th.sorted.sorted-asc .sort-icon {
+  background-position: -318px -200px;
+}
+
+th.sorted.sorted-desc .sort-icon {
+  background-position: -336px -200px;
+}
+
+.table-container {
+  width: 70%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 4px;
+}
+.table-container #filterInput {
+  width: 300px;
+  padding: 8px 12px;
+  font-family: "FontinSmallCaps", Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #110909;
+  border-radius: 4px;
+  outline: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.table-container #filterInput:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.table-container #filterInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.header-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header-container .ggg-logo {
+  width: 47px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.header-container h1 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 0;
+  font-weight: normal;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  background-color: black;
+  border-color: #d4b16a;
+  border: solid 1px rgba(212, 177, 106, 0.3);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  color: #d4b16a;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: #fff;
+}
+
+.currency-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.text-secondary {
+  color: #d4b16a;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,81 @@
+<!-- A really basic HTML with some embeded/internal CSS, just to show the Tables from the api call-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Rates</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Currency Rates</h1>
+  <table id="ratesTable">
+    <thead>
+      <tr>
+        <th>Currency</th>
+        <th>Value (in Chaos)</th>
+        <th>Fetched At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data will be inserted here by JS -->
+    </tbody>
+  </table>
+
+  <script>
+    async function loadRates() {
+      try {
+        // calling or "API" here
+        const response = await fetch('/api/rates');
+        const data = await response.json();
+
+        const tbody = document.querySelector("#ratesTable tbody");
+        tbody.innerHTML = ""; // clear old rows
+
+        data.forEach(rate => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${rate.currency}</td>
+            <td>${rate.value}</td>
+            <td>${rate.fetchedAt}</td>
+          `;
+          tbody.appendChild(row);
+        });
+
+      } catch (error) {
+        console.error("Error loading rates:", error);
+      }
+    }
+
+    // Load immediately
+    loadRates();
+
+    // Refresh every 300s, the number is high because the fetch-currency is a simple manual or cron-related call
+    setInterval(loadRates, 300000);
+  </script>
+</body>
+</html>

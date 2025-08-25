@@ -1,0 +1,52 @@
+<div class="item-page">
+  <h1>
+    <img src="<?= $this->escapeHtml($icon) ?>" alt="<?= $this->escapeHtml($currency) ?>">
+    <?= $this->escapeHtml($currency) ?>
+  </h1>
+  <div class="item-info">
+    <?php if (!empty($description)): ?>
+      <p><?= $this->escapeHtml($this->t('item_description')) ?>: <?= $this->escapeHtml($description) ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="item-info">
+    <?php if (!empty($directions)): ?>
+      <p><?= $this->escapeHtml($this->t('directions')) ?>: <?= $this->escapeHtml($directions) ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="item-info">
+    <?php if (!empty($stackSize)): ?>
+      <p><?= $this->escapeHtml($this->t('stack_size')) ?>: 1/<?= $this->escapeHtml($stackSize) ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="charts-container">
+    <div class="chart-wrapper">
+      <h3><?= $this->escapeHtml($this->t('value_history')) ?></h3>
+      <canvas id="historyChart" class="chart"></canvas>
+    </div>
+
+    
+    <div class="chart-wrapper">
+      <h3><?= $this->escapeHtml($this->t('count_history')) ?></h3>
+      <canvas id="countChart" class="chart"></canvas>
+    </div>
+  </div>
+  
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+<script type="module">
+    import { initItemCharts } from '/js/item-view.js';
+
+    const items = [
+        <?php foreach ($items as $item): ?>
+            {   
+                value: <?= $item->getValue() ?>, 
+                fetchedAt: '<?= $item->getFetchedAt()->format("Y-m-d H:i:s") ?>', 
+                count: <?= $item->getListingCount() ?>  
+            },
+        <?php endforeach; ?>
+    ];
+
+    initItemCharts(items);
+</script>

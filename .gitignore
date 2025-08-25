@@ -1,0 +1,15 @@
+/.phpcs-cache
+/.phpunit.cache
+/.psalm-cache
+vendor/
+data/poe_tracker.sqlite
+data/*.sqlite
+config/development.config.php
+data/cache/*
+data/chace
+!data/cache/.gitkeep
+phpunit.xml
+/.env
+/.idea
+/.vscode
+.DS_Store

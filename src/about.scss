@@ -1,0 +1,27 @@
+@use '_variables.scss' as var;
+
+.about-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+
+  .text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+  }
+
+  .image-about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
+    flex: 1;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
